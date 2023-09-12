@@ -260,7 +260,7 @@ extern "C"
 JNIEXPORT jboolean JNICALL Java_com_wangge_opencl_jni_uBenchmarks_matrixMul6(JNIEnv *env, jobject thiz){
     ALOGI("Begin to run uBenchmark: matrixMul6");
 
-    CCLAPP clApp(&source_matrixMul, "matrixMul5", true);
+    CCLAPP clApp(&source_matrixMul, "matrixMul6", true);
     if (!clApp.ready) {
         printf("clApp is NOT ready\n");
         return false;
@@ -326,9 +326,14 @@ JNIEXPORT jboolean JNICALL Java_com_wangge_opencl_jni_uBenchmarks_matrixMul6(JNI
             , 0
             , NULL
             , NULL);
-    const int WPT = 1;
-    size_t local[2] = {TILESIZE, TILESIZE/WPT};
-    size_t global[2] = {matrixDimM, matrixDimN/WPT};
+
+    //if kernel 6
+    const int TSM = 1;
+    const int TSN = 1;
+    const int WPTM = 1;
+    const int WPTN = 1;
+    size_t local[2] = {TSM/WPTM, TSN/WPTN};
+    size_t global[2] = {matrixDimM/WPTM, matrixDimN/WPTN};
     clEnqueueNDRangeKernel(clApp.clCommandQueue
             , clApp.clKernel
             , 2
