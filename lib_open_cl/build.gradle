@@ -42,7 +42,7 @@ android {
 
     prefab {
         OpenCL {
-            headers rootDir.absolutePath + File.separator +  "contrib" + File.separator + "OpenCL-Headers"
+            headers rootDir.absolutePath + File.separator +  "thirdParty" + File.separator + "OpenCL-Headers"
         }
     }
 
