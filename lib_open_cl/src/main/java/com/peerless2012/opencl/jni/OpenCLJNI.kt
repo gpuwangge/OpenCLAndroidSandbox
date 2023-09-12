@@ -19,13 +19,13 @@ object OpenCLJNI {
         try {
             // /vendor/lib64/libOpenCL.so
             System.loadLibrary("OpenCL")
-            Log.i(TAG, "OpenCL load success!!!1")
+            Log.i(TAG, "OpenCL load success!!! first try")
             findOpenCL = true
         } catch (exception: UnsatisfiedLinkError) {
             exception.printStackTrace()
             try {
                 System.load("/vendor/lib64/libOpenCL.so")
-                Log.i(TAG, "OpenCL load success!!!2")
+                Log.i(TAG, "OpenCL load success!!! second try")
                 findOpenCL = true
             } catch (e2: UnsatisfiedLinkError) {
                 Log.e(TAG, "OpenCL load Fail!!!")
