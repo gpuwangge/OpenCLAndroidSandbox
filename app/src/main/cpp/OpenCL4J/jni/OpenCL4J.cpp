@@ -1,16 +1,4 @@
 #include "OpenCL4J.h"
-//#include "CL/cl_gl.h"
-//#include "CL/cl_egl.h"
-//#include <string>
-//#include <stdlib.h>
-//#include <errno.h>
-//#include <sys/stat.h>
-//#include "GLES2/gl2.h"
-//#include "GLES2/gl2ext.h"
-//#include "GLES3/gl3.h"
-//#include "EGL/egl.h"
-//#include "EGL/eglext.h"
-//#include "string"
 #include <vector>
 #include "clApp.h"
 #define printf ALOGV

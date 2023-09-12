@@ -6,8 +6,9 @@
 #define ANDROIDOPENCL_CLAPP_H
 
 //#include "CL/cl_gl.h"
-#include "CL/cl_egl.h"
-#include "AndroidLog.h"
+//#include "CL/cl_egl.h"
+#include "CL/cl.h"
+#include "AndroidLog.hpp"
 #include "string"
 #define printf ALOGV
 

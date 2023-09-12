@@ -1,13 +1,5 @@
-/**
- * @Author peerless2012
- * @Email peerless2012@126.com
- * @DateTime 2023/3/3 19:16
- * @Version V1.0
- * @Description 
- */
-
-#ifndef ANDROIDOPENCL_ANDROIDLOG_H
-#define ANDROIDOPENCL_ANDROIDLOG_H
+#ifndef ANDROIDOPENCL_ANDROIDLOG_HPP
+#define ANDROIDOPENCL_ANDROIDLOG_HPP
 
 #include <jni.h>
 #include <android/log.h>
@@ -273,4 +265,4 @@ extern "C" {
 }
 #endif
 
-#endif //ANDROIDOPENCL_ANDROIDLOG_H
+#endif //ANDROIDOPENCL_ANDROIDLOG_HPP

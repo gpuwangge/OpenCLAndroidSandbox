@@ -5,8 +5,6 @@ import android.os.Bundle
 //import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 //import androidx.appcompat.widget.Toolbar
-//import com.peerless2012.demo.opencl.R
-//import com.peerless2012.demo.opencl.render.GLInCLOutRender
 import com.wangge.opencl.jni.OpenCL4J
 
 class MainActivity : AppCompatActivity() {
