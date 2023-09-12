@@ -4,7 +4,7 @@
 #include "clApp.h"
 
 CCLAPP::CCLAPP(const char** source, const char* name, bool bTranspose){
-    printf("CClApp Constructor\n");
+    //printf("CClApp Constructor\n");
     char* value;
     size_t valueSize;
     cl_uint platformCount;
@@ -55,7 +55,7 @@ CCLAPP::CCLAPP(const char** source, const char* name, bool bTranspose){
 
     //EGLContext eglContext = eglGetCurrentContext();
     //EGLDisplay eglDisplay = eglGetCurrentDisplay();
-    printf("    Creating Context... \n");
+    //printf("    Creating Context... \n");
     cl_context_properties props[] = {//CL_GL_CONTEXT_KHR,
             //(cl_context_properties) eglContext,
             //CL_EGL_DISPLAY_KHR,
@@ -75,7 +75,7 @@ CCLAPP::CCLAPP(const char** source, const char* name, bool bTranspose){
         ALOGE("Create cl_context error: %d", error_code);
         return;
     }
-    printf("    Creating CommandQueue... \n");
+    //printf("    Creating CommandQueue... \n");
     clCommandQueue = clCreateCommandQueue(clContext
             , deviceId
             , CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE
@@ -84,7 +84,7 @@ CCLAPP::CCLAPP(const char** source, const char* name, bool bTranspose){
         ALOGE("Create cl_command_queue error: %d", error_code);
         return;
     }
-    printf("    Creating Program With Source... \n");
+    //printf("    Creating Program With Source... \n");
     clProgram = clCreateProgramWithSource(clContext
             , 1
             , source
@@ -94,7 +94,7 @@ CCLAPP::CCLAPP(const char** source, const char* name, bool bTranspose){
         ALOGE("Create cl_program error: %d", error_code);
         return;
     }
-    printf("    Building Program... \n");
+    //printf("    Building Program... \n");
     cl_program_info clBuildProgramResult = clBuildProgram(clProgram, 0, NULL, NULL, NULL, NULL);
     if (clBuildProgramResult != CL_SUCCESS) {
         clGetProgramBuildInfo(clProgram
@@ -115,14 +115,14 @@ CCLAPP::CCLAPP(const char** source, const char* name, bool bTranspose){
         return;
     }
 
-    printf("    Creating kernel... \n");
+    //printf("    Creating kernel... \n");
     clKernel = clCreateKernel(clProgram, name, &error_code);
     if (!clKernel) {
         ALOGE("Create cl_kernel error: %d", error_code);
         return;
     }
     if(bTranspose){
-        printf("    Creating transpose kernel... \n");
+        //printf("    Creating transpose kernel... \n");
         clKernel_transpose = clCreateKernel(clProgram, "transpose", &error_code);
         if (!clKernel_transpose) {
             ALOGE("Create cl_kernel_transpose error: %d", error_code);
@@ -135,7 +135,7 @@ CCLAPP::CCLAPP(const char** source, const char* name, bool bTranspose){
 }
 
 CCLAPP::~CCLAPP(){
-    printf("CClApp ~Constructor\n");
+    //printf("CClApp ~Constructor\n");
     if (clProgram != nullptr) {
         clReleaseProgram(clProgram);
     }

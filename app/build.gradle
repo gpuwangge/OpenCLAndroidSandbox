@@ -7,7 +7,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.peerless2012.demo.opencl"
+        applicationId "com.wangge.app.opencl"
         minSdk 21
         targetSdk 31
         versionCode 1

@@ -4,7 +4,8 @@ plugins {
 }
 
 android {
-    namespace 'com.peerless2012.opencl'
+    namespace 'com.wangge.opencl'
+
     compileSdk 33
 
     defaultConfig {
