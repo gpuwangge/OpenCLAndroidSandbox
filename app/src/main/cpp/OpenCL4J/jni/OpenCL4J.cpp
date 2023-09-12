@@ -13,7 +13,7 @@ void JNI_OnUnload(JavaVM *vm, void *reserved) {
 }
 
 extern "C"
-JNIEXPORT jboolean JNICALL Java_com_wangge_opencl_jni_uBenchmarks_vectorAdd(JNIEnv *env, jobject thiz){
+JNIEXPORT jboolean JNICALL Java_com_wangge_opencl_jni_uBenchmarkManager_vectorAdd(JNIEnv *env, jobject thiz){
     ALOGI("Begin to run uBenchmark: vectorAdd");
 
     CCLAPP clApp(&source_vectorAdd, "vectorAdd", false);
@@ -86,7 +86,7 @@ JNIEXPORT jboolean JNICALL Java_com_wangge_opencl_jni_uBenchmarks_vectorAdd(JNIE
 }
 
 extern "C"
-JNIEXPORT jboolean JNICALL Java_com_wangge_opencl_jni_uBenchmarks_matrixMul1(JNIEnv *env, jobject thiz){
+JNIEXPORT jboolean JNICALL Java_com_wangge_opencl_jni_uBenchmarkManager_matrixMul1(JNIEnv *env, jobject thiz){
     ALOGI("Begin to run uBenchmark: matrixMul1");
 
     CCLAPP clApp(&source_matrixMul, "matrixMul1", false);
@@ -158,7 +158,7 @@ JNIEXPORT jboolean JNICALL Java_com_wangge_opencl_jni_uBenchmarks_matrixMul1(JNI
 }
 
 extern "C"
-JNIEXPORT jboolean JNICALL Java_com_wangge_opencl_jni_uBenchmarks_matrixMul5(JNIEnv *env, jobject thiz){
+JNIEXPORT jboolean JNICALL Java_com_wangge_opencl_jni_uBenchmarkManager_matrixMul5(JNIEnv *env, jobject thiz){
     ALOGI("Begin to run uBenchmark: matrixMul5");
 
     CCLAPP clApp(&source_matrixMul, "matrixMul5", true);
@@ -257,7 +257,7 @@ JNIEXPORT jboolean JNICALL Java_com_wangge_opencl_jni_uBenchmarks_matrixMul5(JNI
 }
 
 extern "C"
-JNIEXPORT jboolean JNICALL Java_com_wangge_opencl_jni_uBenchmarks_matrixMul6(JNIEnv *env, jobject thiz){
+JNIEXPORT jboolean JNICALL Java_com_wangge_opencl_jni_uBenchmarkManager_matrixMul6(JNIEnv *env, jobject thiz){
     ALOGI("Begin to run uBenchmark: matrixMul6");
 
     CCLAPP clApp(&source_matrixMul, "matrixMul6", true);

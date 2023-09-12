@@ -5,7 +5,7 @@ import android.os.Bundle
 //import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 //import androidx.appcompat.widget.Toolbar
-import com.wangge.opencl.jni.uBenchmarks
+import com.wangge.opencl.jni.uBenchmarkManager
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,10 +16,10 @@ class MainActivity : AppCompatActivity() {
         //setSupportActionBar(toolbar)
 
         var bSucceed = false
-        bSucceed = uBenchmarks.runVectorAdd()
-        bSucceed = uBenchmarks.runMatrixMul1()  //Native(slowest)
-        bSucceed = uBenchmarks.runMatrixMul5()  //Transpose
-        bSucceed = uBenchmarks.runMatrixMul6()  //Register(fastest)
+        bSucceed = uBenchmarkManager.runVectorAdd()
+        bSucceed = uBenchmarkManager.runMatrixMul1()  //Native(slowest)
+        bSucceed = uBenchmarkManager.runMatrixMul5()  //Transpose
+        bSucceed = uBenchmarkManager.runMatrixMul6()  //Register(fastest)
     }
 
     //override fun onCreateOptionsMenu(menu: Menu): Boolean {
