@@ -11,18 +11,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         //setContentView(R.layout.activity_main)
-
         //val toolbar = findViewById<Toolbar>(R.id.toolbar)
-
         //setSupportActionBar(toolbar)
 
         var bSucceed = false
         bSucceed = uBenchmarks.runVectorAdd()
-        bSucceed = uBenchmarks.runMatrixMul1()
-        bSucceed = uBenchmarks.runMatrixMul5()
-        bSucceed = uBenchmarks.runMatrixMul6()
+        bSucceed = uBenchmarks.runMatrixMul1()  //Native(slowest)
+        bSucceed = uBenchmarks.runMatrixMul5()  //Transpose
+        bSucceed = uBenchmarks.runMatrixMul6()  //Register(fastest)
     }
 
     //override fun onCreateOptionsMenu(menu: Menu): Boolean {
