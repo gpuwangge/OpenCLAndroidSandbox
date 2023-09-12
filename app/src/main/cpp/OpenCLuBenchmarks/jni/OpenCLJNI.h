@@ -1,5 +1,5 @@
-#ifndef ANDROIDOPENCL_OPENCL4J_H
-#define ANDROIDOPENCL_OPENCL4J_H
+#ifndef ANDROIDOPENCL_OPENCLJNI_H
+#define ANDROIDOPENCL_OPENCLJNI_H
 
 #include "jni.h"
 #include "CL/cl.h"
@@ -16,4 +16,4 @@ extern "C"
 }
 #endif
 
-#endif //ANDROIDOPENCL_OPENCL4J_H
+#endif //ANDROIDOPENCL_OPENCLJNI_H

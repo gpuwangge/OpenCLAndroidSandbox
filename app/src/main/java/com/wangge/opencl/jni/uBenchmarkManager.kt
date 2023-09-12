@@ -6,7 +6,6 @@ object uBenchmarkManager {
     init {
         if (OpenCLJNI.findOpenCL)
             System.loadLibrary("OpenCLuBenchmarks")
-            //System.loadLibrary("OpenCL4J")
     }
     fun load() {}
 

@@ -1,15 +1,15 @@
-#include "OpenCL4J.h"
+#include "OpenCLJNI.h"
 #include <vector>
 #include "clApp.h"
 #define printf ALOGV
 
 jint JNI_OnLoad(JavaVM *vm, void *reserved) {
-    ALOGI("OpenCL4J JNI_OnLoad");
+    ALOGI("OpenCLJNI JNI_OnLoad()");
     printOpenCLInfo();
     return JNI_VERSION_1_6;
 }
 void JNI_OnUnload(JavaVM *vm, void *reserved) {
-    ALOGI("OpenCL4J JNI_OnUnload");
+    ALOGI("OpenCLJNI JNI_OnUnload()");
 }
 
 extern "C"

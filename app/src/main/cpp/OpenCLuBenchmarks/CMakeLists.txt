@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
 
 project(OpenCLuBenchmarks)
-#project(OpenCL4J)
 
 string(TOUPPER ${CMAKE_BUILD_TYPE} DEFINE_BUILD_TYPE)
 
