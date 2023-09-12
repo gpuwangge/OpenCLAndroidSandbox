@@ -1,7 +1,7 @@
-package com.peerless2012.demo.opencl
+package com.wangge.opencl
 
 import android.app.Application
-import com.peerless2012.demo.opencl.jni.OpenCL4J
+import com.wangge.opencl.jni.OpenCL4J
 
 class App: Application() {
 

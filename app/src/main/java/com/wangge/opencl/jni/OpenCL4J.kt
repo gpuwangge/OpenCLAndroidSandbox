@@ -1,6 +1,6 @@
-package com.peerless2012.demo.opencl.jni
+package com.wangge.opencl.jni
 
-import com.peerless2012.opencl.jni.OpenCLJNI
+import com.integratekhronosgroup.opencl.jni.OpenCLJNI
 
 object OpenCL4J {
     init {

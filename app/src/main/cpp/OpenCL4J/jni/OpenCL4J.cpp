@@ -1,10 +1,3 @@
-/**
- * @Author peerless2012
- * @Email peerless2012@126.com
- * @DateTime 2023/3/3 16:57
- * @Version V1.0
- * @Description 
- */
 #include "OpenCL4J.h"
 //#include "CL/cl_gl.h"
 //#include "CL/cl_egl.h"
@@ -32,7 +25,7 @@ void JNI_OnUnload(JavaVM *vm, void *reserved) {
 }
 
 extern "C"
-JNIEXPORT jboolean JNICALL Java_com_peerless2012_demo_opencl_jni_OpenCL4J_vectorAdd(JNIEnv *env, jobject thiz){
+JNIEXPORT jboolean JNICALL Java_com_wangge_opencl_jni_OpenCL4J_vectorAdd(JNIEnv *env, jobject thiz){
     CCLAPP clEnvironment(&source_vectorAdd, "vectorAdd");
     if (!clEnvironment.ready) {
         return false;
@@ -103,7 +96,7 @@ JNIEXPORT jboolean JNICALL Java_com_peerless2012_demo_opencl_jni_OpenCL4J_vector
 }
 
 extern "C"
-JNIEXPORT jboolean JNICALL Java_com_peerless2012_demo_opencl_jni_OpenCL4J_matrixMul(JNIEnv *env, jobject thiz){
+JNIEXPORT jboolean JNICALL Java_com_wangge_opencl_jni_OpenCL4J_matrixMul(JNIEnv *env, jobject thiz){
     CCLAPP clEnvironment(&source_matrixMul, "matrixMul1");
     if (!clEnvironment.ready) {
         return false;

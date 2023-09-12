@@ -1,4 +1,4 @@
-package com.peerless2012.demo.opencl.activity
+package com.wangge.opencl.activity
 
 //import android.opengl.GLSurfaceView
 import android.os.Bundle
@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 //import androidx.appcompat.widget.Toolbar
 //import com.peerless2012.demo.opencl.R
 //import com.peerless2012.demo.opencl.render.GLInCLOutRender
-import com.peerless2012.demo.opencl.jni.OpenCL4J
+import com.wangge.opencl.jni.OpenCL4J
 
 class MainActivity : AppCompatActivity() {
 
