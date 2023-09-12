@@ -1,13 +1,13 @@
 package com.wangge.opencl
 
 import android.app.Application
-import com.wangge.opencl.jni.OpenCL4J
+import com.wangge.opencl.jni.uBenchmarks
 
 class App: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        OpenCL4J.load()
+        uBenchmarks.load()
     }
 
 }

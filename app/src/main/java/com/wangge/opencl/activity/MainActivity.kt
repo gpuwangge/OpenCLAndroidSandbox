@@ -5,7 +5,7 @@ import android.os.Bundle
 //import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 //import androidx.appcompat.widget.Toolbar
-import com.wangge.opencl.jni.OpenCL4J
+import com.wangge.opencl.jni.uBenchmarks
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,10 +18,10 @@ class MainActivity : AppCompatActivity() {
 
         //setSupportActionBar(toolbar)
 
-        var bwangge = OpenCL4J.wangge()
-        //val glSurfaceView = findViewById<GLSurfaceView>(R.id.main_surface_view)
-        //glSurfaceView.setEGLContextClientVersion(2)
-        //glSurfaceView.setRenderer(GLInCLOutRender(applicationContext))
+        var bSucceed = false
+        bSucceed = uBenchmarks.runVectorAdd()
+        bSucceed = uBenchmarks.runMatrixMul1()
+        bSucceed = uBenchmarks.runMatrixMul5()
     }
 
     //override fun onCreateOptionsMenu(menu: Menu): Boolean {
