@@ -21,9 +21,13 @@ object uBenchmarks {
         if (!OpenCLJNI.findOpenCL) return false
         return matrixMul5()
     }
+    fun runMatrixMul6(): Boolean{
+        if (!OpenCLJNI.findOpenCL) return false
+        return matrixMul6()
+    }
 
     private external fun vectorAdd(): Boolean
     private external fun matrixMul1(): Boolean
     private external fun matrixMul5(): Boolean
-
+    private external fun matrixMul6(): Boolean
 }

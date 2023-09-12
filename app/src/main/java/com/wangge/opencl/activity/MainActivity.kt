@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         bSucceed = uBenchmarks.runVectorAdd()
         bSucceed = uBenchmarks.runMatrixMul1()
         bSucceed = uBenchmarks.runMatrixMul5()
+        bSucceed = uBenchmarks.runMatrixMul6()
     }
 
     //override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -14,7 +14,7 @@
 
 class CCLAPP {
 public:
-    CCLAPP(const char** source, const char* name);
+    CCLAPP(const char** source, const char* name, bool bTranspose);
 
     ~CCLAPP();
 
@@ -23,6 +23,7 @@ public:
     cl_command_queue clCommandQueue = nullptr;
     cl_program clProgram = nullptr;
     cl_kernel clKernel = nullptr;
+    cl_kernel clKernel_transpose = nullptr;
 };
 
 void printOpenCLInfo();

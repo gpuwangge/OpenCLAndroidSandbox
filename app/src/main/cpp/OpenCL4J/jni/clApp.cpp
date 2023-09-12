@@ -3,8 +3,8 @@
 //
 #include "clApp.h"
 
-CCLAPP::CCLAPP(const char** source, const char* name){
-    ALOGI("CLEnvironment ctor");
+CCLAPP::CCLAPP(const char** source, const char* name, bool bTranspose){
+    printf("CClApp Constructor\n");
     char* value;
     size_t valueSize;
     cl_uint platformCount;
@@ -115,11 +115,19 @@ CCLAPP::CCLAPP(const char** source, const char* name){
         return;
     }
 
-    printf("    Creating Program... \n");
+    printf("    Creating kernel... \n");
     clKernel = clCreateKernel(clProgram, name, &error_code);
     if (!clKernel) {
         ALOGE("Create cl_kernel error: %d", error_code);
         return;
+    }
+    if(bTranspose){
+        printf("    Creating transpose kernel... \n");
+        clKernel_transpose = clCreateKernel(clProgram, "transpose", &error_code);
+        if (!clKernel_transpose) {
+            ALOGE("Create cl_kernel_transpose error: %d", error_code);
+            return;
+        }
     }
 
     printf("    OpenCL is Ready!\n");
@@ -127,7 +135,7 @@ CCLAPP::CCLAPP(const char** source, const char* name){
 }
 
 CCLAPP::~CCLAPP(){
-    ALOGI("CLEnvironment ~ctor");
+    printf("CClApp ~Constructor\n");
     if (clProgram != nullptr) {
         clReleaseProgram(clProgram);
     }
@@ -136,6 +144,9 @@ CCLAPP::~CCLAPP(){
     }
     if (clKernel != nullptr) {
         clReleaseKernel(clKernel);
+    }
+    if (clKernel_transpose != nullptr) {
+        clReleaseKernel(clKernel_transpose);
     }
     if (clContext != nullptr) {
         clReleaseContext(clContext);
