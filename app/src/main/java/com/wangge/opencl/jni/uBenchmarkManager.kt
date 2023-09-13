@@ -9,25 +9,25 @@ object uBenchmarkManager {
     }
     fun load() {}
 
-    fun runVectorAdd(): Boolean{
+    fun runVectorAdd(maxNDRange: Int): Boolean{
         if (!OpenCLJNI.findOpenCL) return false
-        return vectorAdd()
+        return vectorAdd(maxNDRange)
     }
-    fun runMatrixMul1(): Boolean{
+    fun runMatrixMul1(DIM: Int, TILESIZE: Int): Boolean{
         if (!OpenCLJNI.findOpenCL) return false
-        return matrixMul1()
+        return matrixMul1(DIM, TILESIZE)
     }
-    fun runMatrixMul5(): Boolean{
+    fun runMatrixMul5(DIM: Int, TILESIZE: Int, WPT: Int, TRANSPOSEX: Int, TRANSPOSEY: Int): Boolean{
         if (!OpenCLJNI.findOpenCL) return false
-        return matrixMul5()
+        return matrixMul5(DIM, TILESIZE, WPT, TRANSPOSEX, TRANSPOSEY)
     }
-    fun runMatrixMul6(): Boolean{
+    fun runMatrixMul6(DIM: Int, TSM: Int, TSN: Int, WPTM: Int, WPTN: Int, TRANSPOSEX: Int, TRANSPOSEY: Int): Boolean{
         if (!OpenCLJNI.findOpenCL) return false
-        return matrixMul6()
+        return matrixMul6(DIM, TSM, TSN, WPTM, WPTN, TRANSPOSEX, TRANSPOSEY)
     }
 
-    private external fun vectorAdd(): Boolean
-    private external fun matrixMul1(): Boolean
-    private external fun matrixMul5(): Boolean
-    private external fun matrixMul6(): Boolean
+    private external fun vectorAdd(maxNDRange: Int): Boolean
+    private external fun matrixMul1(DIM: Int, TILESIZE: Int): Boolean
+    private external fun matrixMul5(DIM: Int, TILESIZE: Int, WPT: Int, TRANSPOSEX: Int, TRANSPOSEY: Int): Boolean
+    private external fun matrixMul6(DIM: Int, TSM: Int, TSN: Int, WPTM: Int, WPTN: Int, TRANSPOSEX: Int, TRANSPOSEY: Int): Boolean
 }

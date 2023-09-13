@@ -38,7 +38,7 @@ CCLAPP::CCLAPP(const char** source, const char* name, bool bTranspose){
             clGetDeviceInfo(devices[j], CL_DEVICE_EXTENSIONS, 0, NULL, &valueSize);
             value = (char*)malloc(valueSize);
             clGetDeviceInfo(devices[j], CL_DEVICE_EXTENSIONS, valueSize, value, NULL);
-            printf("    CL_DEVICE_EXTENSIONS: %s\n", value);
+            printf("CL_DEVICE_EXTENSIONS: %s\n", value);
             if (strpbrk(value, "cl_khr_gl_sharing") != nullptr
                 && strpbrk(value, "cl_khr_egl_event") != nullptr) {
                 platformId = platforms[i];
@@ -130,7 +130,7 @@ CCLAPP::CCLAPP(const char** source, const char* name, bool bTranspose){
         }
     }
 
-    printf("    OpenCL is Ready!\n");
+    printf("OpenCL is Ready!\n");
     ready = true;
 }
 
