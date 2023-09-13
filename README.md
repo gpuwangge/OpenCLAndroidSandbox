@@ -1,5 +1,5 @@
 # OpenCLAndroidSandbox
-![Android](https://img.shields.io/badge/Android-passing-green)
+![Android](https://img.shields.io/badge/Android-passing-brightgreen)
 
 ## Build
 - Open folder with Android Studio  
