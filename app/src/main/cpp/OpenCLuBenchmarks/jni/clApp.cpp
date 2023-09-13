@@ -17,15 +17,15 @@ CCLAPP::CCLAPP(const char** source, const char* name, bool bTranspose){
     platforms = (cl_platform_id*)malloc(sizeof(cl_platform_id)* platformCount);
     clGetPlatformIDs(platformCount, platforms, NULL);
     for (cl_uint i = 0; i < platformCount; i++) {
-        printf("%d. OpenCL Platform [%d]:\n", i + 1, i + 1);
+        printf("%d. OpenCL Platform [%d]: ", i + 1, i + 1);
         clGetPlatformInfo(platforms[i], CL_PLATFORM_NAME, 0, NULL, &valueSize);
         value = (char*)malloc(valueSize);
         clGetPlatformInfo(platforms[i], CL_PLATFORM_NAME, valueSize, value, NULL);
-        printf("   CL_PLATFORM_NAME: %s\n", value);
+        printf("CL_PLATFORM_NAME: %s; ", value);
         free(value);
 
         clGetDeviceIDs(platforms[i], CL_DEVICE_TYPE_ALL, 0, NULL, &deviceCount);
-        printf("   Total Device Count: %d\n", deviceCount);
+        printf("Total Device Count: %d\n", deviceCount);
 
         // get all GPU devices
         clGetDeviceIDs(platforms[i], CL_DEVICE_TYPE_GPU, 0, NULL, &deviceCount);
