@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity() {
         var bSucceed = false
         bSucceed = uBenchmarkManager.runVectorAdd(100)
         bSucceed = uBenchmarkManager.runMatrixMul1(256, 32)  //Native(slowest)
-        bSucceed = uBenchmarkManager.runMatrixMul5(256,32,8,16,16)  //Transpose
-        bSucceed = uBenchmarkManager.runMatrixMul6(256,128,128,8,8,16,16)  //Register(fastest)
+        bSucceed = uBenchmarkManager.runMatrixMul5(1024,32,8,16,16)  //Transpose
+        bSucceed = uBenchmarkManager.runMatrixMul6(1024,128,128,8,8,16,16)  //Register(fastest)
     }
 
     //override fun onCreateOptionsMenu(menu: Menu): Boolean {
